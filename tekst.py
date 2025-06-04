@@ -1,0 +1,1 @@
+{"text":"Hei, jeg heter Aksel, og jeg er norsk."}
