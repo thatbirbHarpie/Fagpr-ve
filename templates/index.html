@@ -3,8 +3,10 @@
         <title>Main page</title>
     </head>
     <body>
-       <form class="grid" action="/process" method="post">
+       <form class="grid" action="/process" method="post" enctype="multipart/form-data">
        <center> <h1>sjekk resultat?</h1> </center>
+       <center> <h3>legg til lyd filen din</h3></center>
+       <center> <input type="file" name="audio_file"> </center>
         <center><button type="submit">vis resultat </button> </center>
 
        </form>

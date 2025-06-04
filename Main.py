@@ -1,7 +1,12 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request
 import subprocess
+import os
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads'
+
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
 
 @app.route("/")
 def home():
@@ -9,7 +14,11 @@ def home():
 
 @app.route("/process", methods=['POST'] )
 def process():
-    subprocess.run(["python","transcriberApi.py"])
+    uploaded_file = request.files['audio_file']
+    if uploaded_file.filename != '':
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
+        uploaded_file.save(file_path)    
+    subprocess.run(["python","transcriberApi.py", file_path])
     subprocess.run(["python","compare.py"])    
     return redirect(url_for("result"))
 

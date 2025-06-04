@@ -1,6 +1,11 @@
+import sys
 import requests
 
-LYDFILEN="min-fil.mp3"
+if len(sys.argv) < 2:
+    sys.exit(1)
+
+
+LYDFILEN=sys.argv[1]
 OUTPUTFILE="tekst.py"
 f = open(LYDFILEN, "rb")
 url = "https://gpt-dev.uio.no/api/gpt-gateway/audio-stt"
