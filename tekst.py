@@ -1,1 +1,1 @@
-{"text":"Hei, jeg heter Aksel, og jeg er norsk."}
+{"text":"Jeg gikk en tur på stien og hørte skogens ro."}
