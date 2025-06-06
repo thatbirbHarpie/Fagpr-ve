@@ -6,7 +6,7 @@ if len(sys.argv) < 2:
 
 
 LYDFILEN=sys.argv[1]
-OUTPUTFILE="tekst.py"
+OUTPUTFILE="tekst.txt"
 f = open(LYDFILEN, "rb")
 url = "https://gpt-dev.uio.no/api/gpt-gateway/audio-stt"
 res = requests.post(
@@ -21,9 +21,10 @@ res = requests.post(
     }
 )
 f.close()
-print(res.text)
+text = res.json().get("text", "")
+print(text)
 
 
 
 with open(OUTPUTFILE, "w") as text_file:
-    text_file.write(res.text)
+    text_file.write(text)

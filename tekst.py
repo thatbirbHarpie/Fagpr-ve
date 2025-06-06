@@ -1,1 +1,0 @@
-{"text":"Jeg gikk en tur på stien og hørte skogens ro."}

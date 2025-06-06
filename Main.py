@@ -28,5 +28,11 @@ def result():
         diff_content = f.read()
     return render_template('result.html', diff=diff_content)
 
+@app.route("/save", methods=['POST'])
+def save():
+    subprocess.run(["python","superbase.py"])
+    return "<h2>Resultatet er lagret i databasen!</h2><a href='/'>Gå tilbake</a>"
+
+
 if __name__ == "__main__":
     app.run()
