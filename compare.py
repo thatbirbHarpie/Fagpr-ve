@@ -5,7 +5,7 @@ file_path = 'tekst.txt'
 
 with open(file_path, 'r', encoding='utf-8') as file:
     b = file.read()
-a = """Hei, jeg heter Aksel og jeg er norsk."""
+a = """Hei, jeg hjelper deg med norsk uttale."""
 
 seq_match = SequenceMatcher(None, a, b)
 ratio = seq_match.ratio()
