@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Main page</title>
+        <style>
+            .floating-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                color: black;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 16px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+        </style>
+    </head>
+    <body>
+        <form class="grid" action="/process" method="post" enctype="multipart/form-data">
+            <center><h1>Spill inn en lydfil av denne teksten. </h1></center>
+            <center><h2>Hei, jeg hjelper deg med norsk uttale.</h2></center>
+            <center><h3>Legg til lydfilen din</h3></center>
+            <center><input type="file" name="audio_file"></center>
+            <center><h1>Sjekk resultat?</h1></center>
+            <center><button type="submit">Vis resultat</button></center>
+        </form>
+
+        <a href="/results-list" class="floating-button">Vis lagrede</a>
+    </body>
+</html>
